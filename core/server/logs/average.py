@@ -29,5 +29,5 @@ def avg_mem():
 	result /= len(data)
 	return result
 
-output = "Avg.Cpu: {} Avg.Mem {}".format(avg_cpu(), avg_mem())
+output = "Avg.Cpu:{} Avg.Mem:{} Traffic:{}".format(avg_cpu(), avg_mem(), len(data))
 print output
