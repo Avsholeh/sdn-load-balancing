@@ -35,4 +35,4 @@ if __name__ == '__main__':
 		# Will stop if Interruption keyboard is detected
 		except KeyboardInterrupt:
 			break
-		time.sleep(2)
+		time.sleep(1)
