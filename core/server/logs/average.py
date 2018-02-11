@@ -4,8 +4,10 @@ FILENAME = sys.argv[1]
 f = open(FILENAME, "a+")
 file = f.read()
 
-cpu = list()
-memory = list()
+#cpu = list()
+#memory = list()
+#index = 0
+#image = 0
 
 def split(data):
 	container = list()
@@ -29,5 +31,15 @@ def avg_mem():
 	result /= len(data)
 	return result
 
-output = "Avg.Cpu:{} Avg.Mem:{} Traffic:{}".format(avg_cpu(), avg_mem(), len(data))
+def req_type():
+	image = 0
+	index = 0
+	for item in data:
+		if item[3] == "image":
+			image += 1
+		else:
+			index += 1
+	return [index, image]
+
+output = "Avg.Cpu:{} Avg.Mem:{} Traffic:{} Index:{} Image:{}".format(avg_cpu(), avg_mem(), len(data), req_type()[0], req_type()[1])
 print output
