@@ -30,7 +30,7 @@ if __name__ == '__main__':
 			if total_connections != get_http_connections():
 				server.connect((IP, PORT))
 				total_connections = get_http_connections()
-				print 'Mengirimkan %s koneksi ke %s port %s' % (total_connections, IP, PORT)
+				#print 'Mengirimkan %s koneksi ke %s port %s' % (total_connections, IP, PORT)
 				server.send(pickle.dumps(total_connections))
 		# Will stop if Interruption keyboard is detected
 		except KeyboardInterrupt:
