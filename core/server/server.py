@@ -30,6 +30,22 @@ def index():
 @app.route('/image')
 def image():
 	if log:
+		tag = "withimage"
+		t = Thread(target=write_log, args=(tag,))
+		t.start()
+	return render_template("image.html")
+
+@app.route('/noimage')
+def noimage():
+	if log:
+		tag = "noimage"
+		t = Thread(target=write_log, args=(tag,))
+		t.start()
+	return render_template("noimage.html")
+
+@app.route('/static_image')
+def static_image():
+	if log:
 		tag = "image"
 		t = Thread(target=write_log, args=(tag,))
 		t.start()
